@@ -1,156 +1,77 @@
-<div style="text-align:center; margin-top:30px;">
-  <a href="whatsapp-bot.zip" download>
-    <button style="
-      padding:15px 30px;
-      font-size:18px;
-      background:#25D366;
-      color:white;
-      border:none;
-      border-radius:8px;
-      cursor:pointer;
-    ">
-      📦 ZIP Yüklə (WhatsApp Bot)
-    </button>
-  </a>
-</div>
 <!DOCTYPE html>
 <html lang="az">
 <head>
   <meta charset="UTF-8">
-  <title>WhatsBot Builder</title>
-  <style>
-    body {
-      background: #0f172a;
-      color: #ffffff;
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    h1 {
-      color: #22c55e;
-    }
-    .box {
-      background: #020617;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 10px;
-    }
-    label {
-      display: block;
-      margin: 8px 0;
-    }
-    input[type="text"] {
-      width: 100%;
-      padding: 8px;
-      border-radius: 6px;
-      border: none;
-      margin-top: 5px;
-    }
-    button {
-      background: #22c55e;
-      border: none;
-      padding: 12px;
-      width: 100%;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    pre {
-      background: #020617;
-      padding: 15px;
-      border-radius: 10px;
-      overflow-x: auto;
-      margin-top: 15px;
-    }
-  </style>
+  <title>WhatsApp Bot Builder</title>
 </head>
-<body>
 
-<h1>🤖 WhatsApp Bot Builder</h1>
+<body style="font-family:Arial; background:#f4f4f4; padding:20px;">
 
-<div class="box">
-  <h3>Bot məlumatları</h3>
-  <label>
-    Bot adı:
-    <input type="text" id="botName" placeholder="Məs: AdminBot">
-  </label>
-</div>
+  <h1>🤖 WhatsApp Bot Builder</h1>
+  <p>Bu sayt vasitəsilə WhatsApp qrupları üçün bot qura bilərsiniz.</p>
 
-<div class="box">
-  <h3>Funksiyalar</h3>
-  <label><input type="checkbox" id="welcome"> Xoş gəldin mesajı</label>
-  <label><input type="checkbox" id="badwords"> Söyüşləri sil</label>
-  <label><input type="checkbox" id="links"> Linkləri sil</label>
-  <label><input type="checkbox" id="admin"> Admin əmrləri</label>
-</div>
+  <hr>
 
-<button onclick="generateBot()">BOT KODUNU YARAT</button>
+  <h2>📦 Botu Yüklə</h2>
 
-<pre id="output"></pre>
+  <a href="whatsapp-bot.zip" download>
+    <button style="padding:15px; font-size:16px;">
+      ZIP Yüklə
+    </button>
+  </a>
 
-<script>
-function generateBot() {
-  const name = document.getElementById("botName").value || "WhatsBot";
-  const welcome = document.getElementById("welcome").checked;
-  const badwords = document.getElementById("badwords").checked;
-  const links = document.getElementById("links").checked;
-  const admin = document.getElementById("admin").checked;
+  <hr>
 
-  let code = `
-const { Client, LocalAuth } = require('whatsapp-web.js');
-const client = new Client({
-  authStrategy: new LocalAuth()
-});
+  <h2>💻 Kompüterdə Quraşdırma (Windows)</h2>
 
-client.on('ready', () => {
-  console.log('${name} hazirdir!');
-});
+  <ol>
+    <li>ZIP faylı endir</li>
+    <li>ZIP-i çıxart</li>
+    <li>Qovluğun içinə gir</li>
+    <li>Shift + sağ klik → Komut penceresini burada aç</li>
+    <li>Aşağıdakıları yaz:</li>
+  </ol>
 
-client.on('message', async msg => {
-`;
+  <pre>
+npm install
+node index.js
+  </pre>
 
-  if (welcome) {
-    code += `
-  if (msg.body === '!start') {
-    msg.reply('Xoş gəldiniz! Qrup qaydalarına əməl edin.');
-  }
-`;
-  }
+  <p>QR çıxacaq → WhatsApp → Bağlı cihazlar → QR oxut</p>
 
-  if (badwords) {
-    code += `
-  const badWords = ['söyüş1', 'söyüş2'];
-  if (badWords.some(w => msg.body.toLowerCase().includes(w))) {
-    await msg.delete(true);
-  }
-`;
-  }
+  <hr>
 
-  if (links) {
-    code += `
-  if (msg.body.includes('http')) {
-    await msg.delete(true);
-  }
-`;
-  }
+  <h2>📱 Telefonda Quraşdırma (Termux)</h2>
 
-  if (admin) {
-    code += `
-  if (msg.body === '!admin') {
-    msg.reply('Admin əmrləri aktivdir.');
-  }
-`;
-  }
+  <ol>
+    <li>Play Store → Termux yüklə</li>
+    <li>Termux-u aç</li>
+    <li>Aşağıdakıları yaz:</li>
+  </ol>
 
-  code += `
-});
+  <pre>
+pkg install nodejs
+pkg install unzip
+  </pre>
 
-client.initialize();
-`;
+  <p>ZIP-i telefona köçür, aç və yaz:</p>
 
-  document.getElementById("output").textContent = code;
-}
-</script>
+  <pre>
+npm install
+node index.js
+  </pre>
+
+  <hr>
+
+  <h2>❓ Fayllar nə üçündür?</h2>
+
+  <ul>
+    <li><b>index.js</b> – botun əsas kodu</li>
+    <li><b>package.json</b> – lazımlı kitabxanalar</li>
+    <li><b>config.json</b> – ayarlar (sonra əlavə edilə bilər)</li>
+  </ul>
+
+  <p><b>Qeyd:</b> Bot yalnız QR oxudulduqdan sonra işləyir.</p>
 
 </body>
 </html>
