@@ -3,32 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <title>WhatsApp Bot Builder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f4f8;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #25D366;
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+    section {
+      background: white;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    button {
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: #777;
+    }
+  </style>
 </head>
 
-<body style="font-family:Arial; background:#f4f4f4; padding:20px;">
+<body>
 
+<header>
   <h1>🤖 WhatsApp Bot Builder</h1>
-  <p>Bu sayt vasitəsilə WhatsApp qrupları üçün bot qura bilərsiniz.</p>
+  <p>Qruplar üçün hazır və asan WhatsApp bot</p>
+</header>
 
-  <hr>
-
+<section>
   <h2>📦 Botu Yüklə</h2>
+  <p>Botu yüklə və öz WhatsApp qrupunda istifadə et.</p>
 
   <a href="whatsapp-bot.zip" download>
-    <button style="padding:15px; font-size:16px;">
-      ZIP Yüklə
-    </button>
+    <button>ZIP Yüklə</button>
   </a>
+</section>
 
-  <hr>
-
+<section>
   <h2>💻 Kompüterdə Quraşdırma (Windows)</h2>
-
   <ol>
-    <li>ZIP faylı endir</li>
-    <li>ZIP-i çıxart</li>
+    <li>ZIP faylı endir və çıxart</li>
     <li>Qovluğun içinə gir</li>
-    <li>Shift + sağ klik → Komut penceresini burada aç</li>
+    <li>Shift + Sağ klik → “Komut penceresini burada aç”</li>
     <li>Aşağıdakıları yaz:</li>
   </ol>
 
@@ -38,15 +82,13 @@ node index.js
   </pre>
 
   <p>QR çıxacaq → WhatsApp → Bağlı cihazlar → QR oxut</p>
+</section>
 
-  <hr>
-
+<section>
   <h2>📱 Telefonda Quraşdırma (Termux)</h2>
-
   <ol>
     <li>Play Store → Termux yüklə</li>
-    <li>Termux-u aç</li>
-    <li>Aşağıdakıları yaz:</li>
+    <li>Termux-u aç və yaz:</li>
   </ol>
 
   <pre>
@@ -54,24 +96,27 @@ pkg install nodejs
 pkg install unzip
   </pre>
 
-  <p>ZIP-i telefona köçür, aç və yaz:</p>
+  <p>ZIP-i aç, qovluğa gir və yaz:</p>
 
   <pre>
 npm install
 node index.js
   </pre>
+</section>
 
-  <hr>
-
-  <h2>❓ Fayllar nə üçündür?</h2>
-
+<section>
+  <h2>⚙️ Botun Funksiyaları</h2>
   <ul>
-    <li><b>index.js</b> – botun əsas kodu</li>
-    <li><b>package.json</b> – lazımlı kitabxanalar</li>
-    <li><b>config.json</b> – ayarlar (sonra əlavə edilə bilər)</li>
+    <li>❌ Söyüş silmə</li>
+    <li>👋 Yeni gələnlərə xoş gəldin</li>
+    <li>⚠️ Qayda pozanlara xəbərdarlıq</li>
+    <li>👮 Admin əmrləri</li>
   </ul>
+</section>
 
-  <p><b>Qeyd:</b> Bot yalnız QR oxudulduqdan sonra işləyir.</p>
+<footer>
+  <p>© 2026 WhatsApp Bot Builder</p>
+</footer>
 
 </body>
 </html>
