@@ -1,122 +1,124 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-  <meta charset="UTF-8">
-  <title>WhatsApp Bot Builder</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAMEDOFF SHOP</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f2f4f8;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #25D366;
-      color: white;
-      padding: 25px;
-      text-align: center;
-    }
-    section {
-      background: white;
-      margin: 20px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    button {
-      background: #25D366;
-      color: white;
-      border: none;
-      padding: 15px 25px;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    button:hover {
-      opacity: 0.9;
-    }
-    pre {
-      background: #eee;
-      padding: 10px;
-      border-radius: 6px;
-      overflow-x: auto;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      color: #777;
-    }
-  </style>
+<style>
+*{box-sizing:border-box;font-family:Inter,Arial}
+body{margin:0;background:#020617;color:#fff}
+header{text-align:center;padding:25px;border-bottom:1px solid #1f2933}
+header h1{color:#22c55e;margin:0;font-size:30px}
+header p{color:#94a3b8;margin-top:6px}
+.container{max-width:1000px;margin:auto;padding:20px}
+.category{border:1px solid #1f2933;border-radius:14px;margin-bottom:15px}
+.category button{
+  width:100%;background:none;border:none;color:#22c55e;
+  padding:18px;font-size:18px;cursor:pointer;
+  display:flex;justify-content:space-between
+}
+.items{display:none;padding:15px}
+.item{
+  border:1px solid #1f2933;border-radius:10px;
+  padding:12px;margin-bottom:8px;
+  display:flex;justify-content:space-between;gap:10px
+}
+.item button{
+  background:#22c55e;color:#000;border:none;
+  padding:8px 14px;border-radius:8px;cursor:pointer
+}
+footer{text-align:center;padding:15px;color:#94a3b8;border-top:1px solid #1f2933}
+@media(max-width:600px){.item{flex-direction:column}}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>🤖 WhatsApp Bot Builder</h1>
-  <p>Qruplar üçün hazır və asan WhatsApp bot</p>
+<h1>MAMEDOFF SHOP</h1>
+<p>Sürətli • Etibarlı • WhatsApp Sifariş</p>
 </header>
 
-<section>
-  <h2>📦 Botu Yüklə</h2>
-  <p>Botu yüklə və öz WhatsApp qrupunda istifadə et.</p>
+<div class="container">
 
-  <a href="whatsapp-bot.zip" download>
-    <button>ZIP Yüklə</button>
-  </a>
-</section>
+<!-- TIKTOK JETON -->
+<div class="category">
+<button onclick="toggle(this)">🎵 TikTok Jeton</button>
+<div class="items">
+<div class="item"><span>70 Jeton — 2 AZN</span><button onclick="order('TikTok 70 Jeton - 2 AZN')">Sifariş</button></div>
+<div class="item"><span>350 Jeton — 7.50 AZN</span><button onclick="order('TikTok 350 Jeton - 7.50 AZN')">Sifariş</button></div>
+<div class="item"><span>700 Jeton — 14.50 AZN</span><button onclick="order('TikTok 700 Jeton - 14.50 AZN')">Sifariş</button></div>
+<div class="item"><span>1400 Jeton — 27.30 AZN</span><button onclick="order('TikTok 1400 Jeton - 27.30 AZN')">Sifariş</button></div>
+<div class="item"><span>3500 Jeton — 68.70 AZN</span><button onclick="order('TikTok 3500 Jeton - 68.70 AZN')">Sifariş</button></div>
+<div class="item"><span>7000 Jeton — 138.50 AZN</span><button onclick="order('TikTok 7000 Jeton - 138.50 AZN')">Sifariş</button></div>
+</div>
+</div>
 
-<section>
-  <h2>💻 Kompüterdə Quraşdırma (Windows)</h2>
-  <ol>
-    <li>ZIP faylı endir və çıxart</li>
-    <li>Qovluğun içinə gir</li>
-    <li>Shift + Sağ klik → “Komut penceresini burada aç”</li>
-    <li>Aşağıdakıları yaz:</li>
-  </ol>
+<!-- TIKTOK BAXIŞ -->
+<div class="category">
+<button onclick="toggle(this)">🔥 TikTok Baxış</button>
+<div class="items">
+<div class="item"><span>10K — 1 AZN</span><button onclick="order('TikTok 10K Baxış - 1 AZN')">Sifariş</button></div>
+<div class="item"><span>20K — 2 AZN</span><button onclick="order('TikTok 20K Baxış - 2 AZN')">Sifariş</button></div>
+<div class="item"><span>30K — 3 AZN</span><button onclick="order('TikTok 30K Baxış - 3 AZN')">Sifariş</button></div>
+<div class="item"><span>50K — 5 AZN</span><button onclick="order('TikTok 50K Baxış - 5 AZN')">Sifariş</button></div>
+<div class="item"><span>100K — 9 AZN</span><button onclick="order('TikTok 100K Baxış - 9 AZN')">Sifariş</button></div>
+<div class="item"><span>200K — 17 AZN</span><button onclick="order('TikTok 200K Baxış - 17 AZN')">Sifariş</button></div>
+<div class="item"><span>500K — 40 AZN</span><button onclick="order('TikTok 500K Baxış - 40 AZN')">Sifariş</button></div>
+</div>
+</div>
 
-  <pre>
-npm install
-node index.js
-  </pre>
+<!-- TIKTOK LIKE -->
+<div class="category">
+<button onclick="toggle(this)">❤️ TikTok Like</button>
+<div class="items">
+<div class="item"><span>1000 — 1 AZN</span><button onclick="order('TikTok 1000 Like - 1 AZN')">Sifariş</button></div>
+<div class="item"><span>2000 — 2 AZN</span><button onclick="order('TikTok 2000 Like - 2 AZN')">Sifariş</button></div>
+<div class="item"><span>3000 — 3 AZN</span><button onclick="order('TikTok 3000 Like - 3 AZN')">Sifariş</button></div>
+<div class="item"><span>4000 — 4 AZN</span><button onclick="order('TikTok 4000 Like - 4 AZN')">Sifariş</button></div>
+<div class="item"><span>6000 — 6 AZN</span><button onclick="order('TikTok 6000 Like - 6 AZN')">Sifariş</button></div>
+<div class="item"><span>10000 — 10 AZN</span><button onclick="order('TikTok 10000 Like - 10 AZN')">Sifariş</button></div>
+<div class="item"><span>100000 — 100 AZN</span><button onclick="order('TikTok 100000 Like - 100 AZN')">Sifariş</button></div>
+</div>
+</div>
 
-  <p>QR çıxacaq → WhatsApp → Bağlı cihazlar → QR oxut</p>
-</section>
+<!-- INSTAGRAM -->
+<div class="category">
+<button onclick="toggle(this)">📸 Instagram Takipçi</button>
+<div class="items">
+<div class="item"><span>200 — 2.50 AZN</span><button onclick="order('Instagram 200 Takipçi - 2.50 AZN')">Sifariş</button></div>
+<div class="item"><span>300 — 4.50 AZN</span><button onclick="order('Instagram 300 Takipçi - 4.50 AZN')">Sifariş</button></div>
+<div class="item"><span>500 — 7.50 AZN</span><button onclick="order('Instagram 500 Takipçi - 7.50 AZN')">Sifariş</button></div>
+<div class="item"><span>1K — 13.50 AZN</span><button onclick="order('Instagram 1K Takipçi - 13.50 AZN')">Sifariş</button></div>
+<div class="item"><span>10K — 90 AZN</span><button onclick="order('Instagram 10K Takipçi - 90 AZN')">Sifariş</button></div>
+</div>
+</div>
 
-<section>
-  <h2>📱 Telefonda Quraşdırma (Termux)</h2>
-  <ol>
-    <li>Play Store → Termux yüklə</li>
-    <li>Termux-u aç və yaz:</li>
-  </ol>
+<!-- FREE FIRE -->
+<div class="category">
+<button onclick="toggle(this)">🔥 Free Fire Elmas</button>
+<div class="items">
+<div class="item"><span>110 Elmas — 2 AZN</span><button onclick="order('Free Fire 110 Elmas - 2 AZN')">Sifariş</button></div>
+<div class="item"><span>341 Elmas — 5 AZN</span><button onclick="order('Free Fire 341 Elmas - 5 AZN')">Sifariş</button></div>
+<div class="item"><span>572 Elmas — 9 AZN</span><button onclick="order('Free Fire 572 Elmas - 9 AZN')">Sifariş</button></div>
+<div class="item"><span>1166 Elmas — 16 AZN</span><button onclick="order('Free Fire 1166 Elmas - 16 AZN')">Sifariş</button></div>
+<div class="item"><span>2398 Elmas — 32 AZN</span><button onclick="order('Free Fire 2398 Elmas - 32 AZN')">Sifariş</button></div>
+<div class="item"><span>6160 Elmas — 77 AZN</span><button onclick="order('Free Fire 6160 Elmas - 77 AZN')">Sifariş</button></div>
+</div>
+</div>
 
-  <pre>
-pkg install nodejs
-pkg install unzip
-  </pre>
+</div>
 
-  <p>ZIP-i aç, qovluğa gir və yaz:</p>
+<footer>© 2026 MAMEDOFF SHOP</footer>
 
-  <pre>
-npm install
-node index.js
-  </pre>
-</section>
-
-<section>
-  <h2>⚙️ Botun Funksiyaları</h2>
-  <ul>
-    <li>❌ Söyüş silmə</li>
-    <li>👋 Yeni gələnlərə xoş gəldin</li>
-    <li>⚠️ Qayda pozanlara xəbərdarlıq</li>
-    <li>👮 Admin əmrləri</li>
-  </ul>
-</section>
-
-<footer>
-  <p>© 2026 WhatsApp Bot Builder</p>
-</footer>
+<script>
+const WHATSAPP="994554886181";
+function toggle(b){const d=b.nextElementSibling;d.style.display=d.style.display==="block"?"none":"block"}
+function order(t){
+window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Salam, sifariş vermək istəyirəm:\n"+t)}`,"_blank")
+}
+</script>
 
 </body>
 </html>
