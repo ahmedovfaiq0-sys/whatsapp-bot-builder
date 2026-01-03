@@ -6,30 +6,30 @@
 <title>MAMEDOFF SHOP</title>
 
 <style>
-*{box-sizing:border-box;font-family:Inter,Arial}
+*{box-sizing:border-box;font-family:Inter,Arial,Helvetica,sans-serif}
 body{margin:0;background:#020617;color:#fff}
 header{text-align:center;padding:25px;border-bottom:1px solid #1f2933}
 header h1{color:#22c55e;margin:0;font-size:30px}
 header p{color:#94a3b8;margin-top:6px}
 .container{max-width:1000px;margin:auto;padding:20px}
-.category{border:1px solid #1f2933;border-radius:14px;margin-bottom:15px}
+.category{border:1px solid #1f2933;border-radius:14px;margin-bottom:15px;overflow:hidden}
 .category button{
   width:100%;background:none;border:none;color:#22c55e;
   padding:18px;font-size:18px;cursor:pointer;
-  display:flex;justify-content:space-between
+  display:flex;justify-content:space-between;align-items:center
 }
 .items{display:none;padding:15px}
 .item{
   border:1px solid #1f2933;border-radius:10px;
   padding:12px;margin-bottom:8px;
-  display:flex;justify-content:space-between;gap:10px
+  display:flex;justify-content:space-between;gap:10px;align-items:center
 }
 .item button{
   background:#22c55e;color:#000;border:none;
-  padding:8px 14px;border-radius:8px;cursor:pointer
+  padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:600
 }
 footer{text-align:center;padding:15px;color:#94a3b8;border-top:1px solid #1f2933}
-@media(max-width:600px){.item{flex-direction:column}}
+@media(max-width:600px){.item{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
 
@@ -37,10 +37,28 @@ footer{text-align:center;padding:15px;color:#94a3b8;border-top:1px solid #1f2933
 
 <header>
 <h1>MAMEDOFF SHOP</h1>
-<p>Sürətli • Etibarlı • WhatsApp Sifariş</p>
+<p>Sürətli • Etibarlı • WhatsApp ilə avtomatik sifariş</p>
 </header>
 
 <div class="container">
+
+<!-- UC SATIŞI -->
+<div class="category">
+<button onclick="toggle(this)">🟣 UC Satışı</button>
+<div class="items">
+<div class="item"><span>10 UC — 0.60 AZN</span><button onclick="order('10 UC - 0.60 AZN')">Sifariş</button></div>
+<div class="item"><span>30 UC — 1 AZN</span><button onclick="order('30 UC - 1 AZN')">Sifariş</button></div>
+<div class="item"><span>60 UC — 1.80 AZN</span><button onclick="order('60 UC - 1.80 AZN')">Sifariş</button></div>
+<div class="item"><span>120 UC — 3.50 AZN</span><button onclick="order('120 UC - 3.50 AZN')">Sifariş</button></div>
+<div class="item"><span>180 UC — 5.20 AZN</span><button onclick="order('180 UC - 5.20 AZN')">Sifariş</button></div>
+<div class="item"><span>325 UC — 8.50 AZN</span><button onclick="order('325 UC - 8.50 AZN')">Sifariş</button></div>
+<div class="item"><span>660 UC — 16.50 AZN</span><button onclick="order('660 UC - 16.50 AZN')">Sifariş</button></div>
+<div class="item"><span>1800 UC — 41 AZN</span><button onclick="order('1800 UC - 41 AZN')">Sifariş</button></div>
+<div class="item"><span>3850 UC — 80 AZN</span><button onclick="order('3850 UC - 80 AZN')">Sifariş</button></div>
+<div class="item"><span>8100 UC — 160 AZN</span><button onclick="order('8100 UC - 160 AZN')">Sifariş</button></div>
+<div class="item"><span>16200 UC — 315 AZN</span><button onclick="order('16200 UC - 315 AZN')">Sifariş</button></div>
+</div>
+</div>
 
 <!-- TIKTOK JETON -->
 <div class="category">
@@ -50,22 +68,6 @@ footer{text-align:center;padding:15px;color:#94a3b8;border-top:1px solid #1f2933
 <div class="item"><span>350 Jeton — 7.50 AZN</span><button onclick="order('TikTok 350 Jeton - 7.50 AZN')">Sifariş</button></div>
 <div class="item"><span>700 Jeton — 14.50 AZN</span><button onclick="order('TikTok 700 Jeton - 14.50 AZN')">Sifariş</button></div>
 <div class="item"><span>1400 Jeton — 27.30 AZN</span><button onclick="order('TikTok 1400 Jeton - 27.30 AZN')">Sifariş</button></div>
-<div class="item"><span>3500 Jeton — 68.70 AZN</span><button onclick="order('TikTok 3500 Jeton - 68.70 AZN')">Sifariş</button></div>
-<div class="item"><span>7000 Jeton — 138.50 AZN</span><button onclick="order('TikTok 7000 Jeton - 138.50 AZN')">Sifariş</button></div>
-</div>
-</div>
-
-<!-- TIKTOK BAXIŞ -->
-<div class="category">
-<button onclick="toggle(this)">🔥 TikTok Baxış</button>
-<div class="items">
-<div class="item"><span>10K — 1 AZN</span><button onclick="order('TikTok 10K Baxış - 1 AZN')">Sifariş</button></div>
-<div class="item"><span>20K — 2 AZN</span><button onclick="order('TikTok 20K Baxış - 2 AZN')">Sifariş</button></div>
-<div class="item"><span>30K — 3 AZN</span><button onclick="order('TikTok 30K Baxış - 3 AZN')">Sifariş</button></div>
-<div class="item"><span>50K — 5 AZN</span><button onclick="order('TikTok 50K Baxış - 5 AZN')">Sifariş</button></div>
-<div class="item"><span>100K — 9 AZN</span><button onclick="order('TikTok 100K Baxış - 9 AZN')">Sifariş</button></div>
-<div class="item"><span>200K — 17 AZN</span><button onclick="order('TikTok 200K Baxış - 17 AZN')">Sifariş</button></div>
-<div class="item"><span>500K — 40 AZN</span><button onclick="order('TikTok 500K Baxış - 40 AZN')">Sifariş</button></div>
 </div>
 </div>
 
@@ -73,25 +75,9 @@ footer{text-align:center;padding:15px;color:#94a3b8;border-top:1px solid #1f2933
 <div class="category">
 <button onclick="toggle(this)">❤️ TikTok Like</button>
 <div class="items">
-<div class="item"><span>1000 — 1 AZN</span><button onclick="order('TikTok 1000 Like - 1 AZN')">Sifariş</button></div>
-<div class="item"><span>2000 — 2 AZN</span><button onclick="order('TikTok 2000 Like - 2 AZN')">Sifariş</button></div>
-<div class="item"><span>3000 — 3 AZN</span><button onclick="order('TikTok 3000 Like - 3 AZN')">Sifariş</button></div>
-<div class="item"><span>4000 — 4 AZN</span><button onclick="order('TikTok 4000 Like - 4 AZN')">Sifariş</button></div>
-<div class="item"><span>6000 — 6 AZN</span><button onclick="order('TikTok 6000 Like - 6 AZN')">Sifariş</button></div>
-<div class="item"><span>10000 — 10 AZN</span><button onclick="order('TikTok 10000 Like - 10 AZN')">Sifariş</button></div>
-<div class="item"><span>100000 — 100 AZN</span><button onclick="order('TikTok 100000 Like - 100 AZN')">Sifariş</button></div>
-</div>
-</div>
-
-<!-- INSTAGRAM -->
-<div class="category">
-<button onclick="toggle(this)">📸 Instagram Takipçi</button>
-<div class="items">
-<div class="item"><span>200 — 2.50 AZN</span><button onclick="order('Instagram 200 Takipçi - 2.50 AZN')">Sifariş</button></div>
-<div class="item"><span>300 — 4.50 AZN</span><button onclick="order('Instagram 300 Takipçi - 4.50 AZN')">Sifariş</button></div>
-<div class="item"><span>500 — 7.50 AZN</span><button onclick="order('Instagram 500 Takipçi - 7.50 AZN')">Sifariş</button></div>
-<div class="item"><span>1K — 13.50 AZN</span><button onclick="order('Instagram 1K Takipçi - 13.50 AZN')">Sifariş</button></div>
-<div class="item"><span>10K — 90 AZN</span><button onclick="order('Instagram 10K Takipçi - 90 AZN')">Sifariş</button></div>
+<div class="item"><span>1000 Like — 1 AZN</span><button onclick="order('TikTok 1000 Like - 1 AZN')">Sifariş</button></div>
+<div class="item"><span>5000 Like — 5 AZN</span><button onclick="order('TikTok 5000 Like - 5 AZN')">Sifariş</button></div>
+<div class="item"><span>10000 Like — 10 AZN</span><button onclick="order('TikTok 10000 Like - 10 AZN')">Sifariş</button></div>
 </div>
 </div>
 
@@ -101,10 +87,7 @@ footer{text-align:center;padding:15px;color:#94a3b8;border-top:1px solid #1f2933
 <div class="items">
 <div class="item"><span>110 Elmas — 2 AZN</span><button onclick="order('Free Fire 110 Elmas - 2 AZN')">Sifariş</button></div>
 <div class="item"><span>341 Elmas — 5 AZN</span><button onclick="order('Free Fire 341 Elmas - 5 AZN')">Sifariş</button></div>
-<div class="item"><span>572 Elmas — 9 AZN</span><button onclick="order('Free Fire 572 Elmas - 9 AZN')">Sifariş</button></div>
 <div class="item"><span>1166 Elmas — 16 AZN</span><button onclick="order('Free Fire 1166 Elmas - 16 AZN')">Sifariş</button></div>
-<div class="item"><span>2398 Elmas — 32 AZN</span><button onclick="order('Free Fire 2398 Elmas - 32 AZN')">Sifariş</button></div>
-<div class="item"><span>6160 Elmas — 77 AZN</span><button onclick="order('Free Fire 6160 Elmas - 77 AZN')">Sifariş</button></div>
 </div>
 </div>
 
@@ -114,9 +97,17 @@ footer{text-align:center;padding:15px;color:#94a3b8;border-top:1px solid #1f2933
 
 <script>
 const WHATSAPP="994554886181";
-function toggle(b){const d=b.nextElementSibling;d.style.display=d.style.display==="block"?"none":"block"}
+function toggle(b){
+  const d=b.nextElementSibling;
+  d.style.display=d.style.display==="block"?"none":"block";
+}
 function order(t){
-window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Salam, sifariş vermək istəyirəm:\n"+t)}`,"_blank")
+  window.open(
+    `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
+      "Salam, MAMEDOFF SHOP-dan sifariş vermək istəyirəm:\n"+t
+    )}`,
+    "_blank"
+  );
 }
 </script>
 
